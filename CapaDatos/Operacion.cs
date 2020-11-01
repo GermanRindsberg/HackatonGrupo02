@@ -7,18 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HackatonGrupo02.Modelo
+namespace HackatonGrupo02.CapaDatos
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Operacion
     {
+        string destinatario;
+        string dni;
+        string detalle;
+
+
+
         public int idOperacion { get; set; }
         public int idTipoOperacion { get; set; }
+
         public System.DateTime fechaOperacion { get; set; }
         public Nullable<decimal> montoOperacion { get; set; }
     
         public virtual TipoOperacion TipoOperacion { get; set; }
+        public string Destinatario { get => destinatario; set => destinatario = value; }
+        public string Detalle { get => detalle; set => detalle = value; }
+        public string Dni { get => dni; set => dni = value; }
+
+        public Operacion(int idTipoOperacion, DateTime fechaOperacion, decimal? montoOperacion, string destinatario,string dni, string detalle)
+        {
+            this.idTipoOperacion = idTipoOperacion;
+            this.fechaOperacion = fechaOperacion;
+            this.montoOperacion = montoOperacion;
+            Destinatario = destinatario;
+            Dni = dni;
+            Detalle = detalle;
+        }
     }
 }

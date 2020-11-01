@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HackatonGrupo02.Modelo
+namespace HackatonGrupo02.CapaDatos
 {
     using System;
     using System.Data.Entity;

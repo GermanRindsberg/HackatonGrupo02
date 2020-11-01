@@ -7,19 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HackatonGrupo02.Modelo
+namespace HackatonGrupo02.CapaDatos
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Usuario
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
-        {
-            this.Tarjeta = new HashSet<Tarjeta>();
-        }
     
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+
         public int idUsuario { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
@@ -29,8 +27,7 @@ namespace HackatonGrupo02.Modelo
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tarjeta> Tarjeta { get; set; }
-
-        //constructor para dar de alta
+        // constructor para alta
         public Usuario(string nombre, string apellido, string dni, string usuario1, string clave)
         {
             this.nombre = nombre;
@@ -39,17 +36,19 @@ namespace HackatonGrupo02.Modelo
             this.usuario1 = usuario1;
             this.clave = clave;
         }
-        //constructor para editar usuario
-        public Usuario(int idUsuario, string nombre, string apellido, string dni, string usuario1, string clave)
+
+        //constructor para ingreso
+        public Usuario(string usuario1, string clave)
         {
-            this.idUsuario = idUsuario;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.dni = dni;
             this.usuario1 = usuario1;
             this.clave = clave;
         }
+        //usuario vacio
+        public Usuario()
+        {
+            
+        }
 
-        
+
     }
 }

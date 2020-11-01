@@ -7,22 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HackatonGrupo02.Modelo
+namespace HackatonGrupo02.CapaDatos
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TipoTarjeta
+    public partial class Banco
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TipoTarjeta()
+        public Banco()
         {
+            this.CajaDeAhorro = new HashSet<CajaDeAhorro>();
+            this.CuentaCorriente = new HashSet<CuentaCorriente>();
             this.Tarjeta = new HashSet<Tarjeta>();
         }
     
-        public int idTipoTarjeta { get; set; }
+        public int idBanco { get; set; }
         public string nombre { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CajaDeAhorro> CajaDeAhorro { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CuentaCorriente> CuentaCorriente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tarjeta> Tarjeta { get; set; }
     }

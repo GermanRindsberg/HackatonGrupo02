@@ -7,19 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HackatonGrupo02.Modelo
+namespace HackatonGrupo02.CapaDatos
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CajaDeAhorro
+    public partial class Cupon
     {
-        public int idCajaAhorro { get; set; }
-        public string numero { get; set; }
-        public Nullable<System.DateTime> fechaVencimiento { get; set; }
-        public decimal saldo { get; set; }
-        public Nullable<int> idBanco { get; set; }
+        public int idCupon { get; set; }
+        public Nullable<decimal> porcentajeDescuento { get; set; }
+        public Nullable<int> idTarjeta { get; set; }
     
-        public virtual Banco Banco { get; set; }
+        public virtual Tarjeta Tarjeta { get; set; }
     }
 }

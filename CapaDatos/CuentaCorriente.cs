@@ -7,17 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HackatonGrupo02.Modelo
+namespace HackatonGrupo02.CapaDatos
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Cupon
+    public partial class CuentaCorriente
     {
-        public int idCupon { get; set; }
-        public Nullable<decimal> porcentajeDescuento { get; set; }
-        public Nullable<int> idTarjeta { get; set; }
+        public int idCuentaCorriente { get; set; }
+        public string numero { get; set; }
+        public decimal saldo { get; set; }
+        public Nullable<int> idBanco { get; set; }
     
-        public virtual Tarjeta Tarjeta { get; set; }
+        public virtual Banco Banco { get; set; }
+
+        public CuentaCorriente(string numero, decimal saldo, int? idBanco)
+        {
+            this.numero = numero;
+            this.saldo = saldo;
+            this.idBanco = idBanco;
+        }
     }
 }
